@@ -1,0 +1,64 @@
+<!-- phase : 1 -> It comes from the myContent  this is the where we had provided  from child  *ngComponentOutlet="
+      myDestopRightMenuTemplate;
+      inputs: { myData: 'jerry' };
+      injector: myInjector;
+      content: myContent
+    "-->
+<!-- above content:myContent from child has send here phase : 1 is just written to make understand-->
+<!-- there is no use of phase 1 here it is written in child componnent from where it was projected-->
+<!-- / -->
+<!-- **** It will be projected by this way ***** -->
+<!-- <ng-content></ng-content> -->
+
+<!-- The *applySelectHighLightRightMenu syntax we've written in the template is not a standard Angular syntax. The * is typically used with structural directives like *ngFor and *ngIf to modify the structure of the DOM based on conditions or iterables. -->
+<table class="table" #table [applySelectHighLightRightMenu]="{ name: 'HELLO' }">
+  <tbody>
+    <tr
+      role="desktop-right-menu more-options view"
+      #desktopRightMenuRowProjection
+    >
+      <td class="d-flex justify-content-between">
+        <span>&nbsp;&nbsp;&nbsp;View</span>
+        <i class="bi bi-chevron-right"></i>
+      </td>
+    </tr>
+    <tr role="desktop-right-menu" #desktopRightMenuRowProjection>
+      <td>&nbsp;&nbsp;&nbsp;Refresh</td>
+    </tr>
+    <tr
+      role="desktop-right-menu more-options new"
+      #desktopRightMenuRowProjection
+    >
+      <td class="d-flex justify-content-between">
+        <span>&nbsp;&nbsp;&nbsp;New</span>
+        <i class="bi bi-chevron-right"></i>
+      </td>
+    </tr>
+    <tr role="desktop-right-menu" #desktopRightMenuRowProjection>
+      <td>&nbsp;&nbsp;&nbsp;Open Terminal</td>
+    </tr>
+    <tr role="desktop-right-menu" #desktopRightMenuRowProjection>
+      <td>&nbsp;&nbsp;&nbsp;File Difference Checker</td>
+    </tr>
+    <tr role="desktop-right-menu" #desktopRightMenuRowProjection>
+      <td>&nbsp;&nbsp;&nbsp;More...</td>
+    </tr>
+    <tr role="desktop-right-menu" #desktopRightMenuRowProjection>
+      <td>&nbsp;&nbsp;&nbsp;About</td>
+    </tr>
+    <tr role="desktop-right-menu" #desktopRightMenuRowProjection>
+      <td>&nbsp;&nbsp;&nbsp;NG OS X</td>
+    </tr>
+    <tr role="desktop-right-menu" #desktopRightMenuRowProjection>
+      <td>&nbsp;&nbsp;&nbsp;Connect To</td>
+    </tr>
+  </tbody>
+</table>
+
+<!--  -->
+<!-- Here we have already defined where div have to come so, postion will be automatically taken fron this cpmponent desktop-right-menu-orihection-component.html -->
+<div class="moreOptBox" #moreOptBox>
+  <!-- <ng-container></ng-container> -->
+</div>
+
+<!-- / -->

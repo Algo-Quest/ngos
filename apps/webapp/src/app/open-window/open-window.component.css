@@ -1,0 +1,36 @@
+.window-box {
+  position: absolute;
+  top: 3vh;
+  left: 15%;
+  width: 62.5vw;
+  background-color: whitesmoke;
+  border: 2px solid grey;
+  user-select: none;
+  z-index: -1;
+}
+
+.top-bar {
+  height: 50px;
+  border-bottom: 1px solid darkgray;
+  background-color: rgba(63, 63, 63, 0.1);
+}
+
+.top-bar-right-side > span {
+  width: 20px;
+  height: 20px;
+  border-radius: 35px;
+}
+
+.top-bar-right-side > span:first-child {
+  background-color: rgb(207, 207, 4);
+  border: 1px solid rgb(162, 170, 0);
+}
+.top-bar-right-side > span:nth-child(2) {
+  background-color: rgb(0, 223, 0);
+  border: 1px solid rgb(2, 176, 2);
+}
+.top-bar-right-side > span:last-child {
+  background-color: red;
+  border: 1px solid rgb(197, 3, 3);
+  margin-right: -0.5em;
+}

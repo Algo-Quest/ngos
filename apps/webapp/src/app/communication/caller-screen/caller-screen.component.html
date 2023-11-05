@@ -1,0 +1,31 @@
+<div
+  #receiverScreen
+  class="receiver-screen-box animate__animated animate__jackInTheBox"
+>
+  <div class="receiver-screen text-white" applymove>
+    <div class="container-fluid">
+      <div class="row d-flex">
+        <span class="my-fs"
+          >Sending Request to : {{ 'cl.amitabhanand@gmail.com' }}</span
+        >
+        <hr />
+      </div>
+
+      <div class="row d-flex justify-content-center">
+        <div class="col-6 d-flex justify-content-center">
+          <button class="btn btn-danger" (click)="denyCallReq()">
+            Deny request
+          </button>
+        </div>
+      </div>
+
+      <div class="row d-flex justify-content-center">
+        <div
+          class="spinner-grow text-light"
+          style="width: 7rem; height: 7rem; margin-top: 6em"
+          role="status"
+        ></div>
+      </div>
+    </div>
+  </div>
+</div>

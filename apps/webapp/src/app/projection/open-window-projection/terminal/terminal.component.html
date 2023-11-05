@@ -1,0 +1,24 @@
+<!-- do not add/use animation which has width,height,top,left changes because it will affect in folder create position will chnage as animation takes time to show and in the mean time some continuosly creates folder it will calculate the animated chnaged dimension and affect position -->
+<div role="folder" class="terminal-box" #terminal>
+  <div applymove>
+    <div class="terminal">
+      <div class="output" #output>
+        <h4>NgShell 1.0.0</h4>
+        <div #cmdPrintArea>
+          <!-- command print area -->
+        </div>
+      </div>
+      <div class="input-line">
+        <span class="prompt">{{ rootDirService.rootDir }} ></span>
+        <input
+          spellcheck="false"
+          #terminalInput
+          class="input"
+          type="text"
+          autofocus
+          (keydown)="handleInput($event)"
+        />
+      </div>
+    </div>
+  </div>
+</div>

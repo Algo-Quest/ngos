@@ -1,0 +1,59 @@
+.right-menu {
+  height: 653px;
+  border-right: 1px solid rgb(198, 198, 198);
+}
+
+.right-menu > .row > div > button > .bi {
+  font-size: x-large;
+  pointer-events: auto !important;
+}
+
+.btn {
+  border: none !important;
+}
+
+/* nested directory */
+
+ul,
+#myUL {
+  list-style-type: none;
+}
+
+#myUL {
+  margin: 0;
+  padding: 0;
+}
+
+#myUL li {
+  cursor: pointer;
+}
+
+.caret::before {
+  content: '\25B6';
+  color: rgb(1, 99, 197);
+  display: inline-block;
+  margin-right: 6px;
+  cursor: default;
+}
+
+.caret {
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.caret-down::before {
+  -ms-transform: rotate(90deg);
+  -webkit-transform: rotate(90deg);
+  transform: rotate(90deg);
+}
+
+.nested {
+  display: none;
+}
+
+.active {
+  display: block;
+}

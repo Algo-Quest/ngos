@@ -1,0 +1,95 @@
+<!-- <ng-template #openWindowProjection> -->
+<!-- <h2 class="text-dark">HEY i am from child comp! {{ myData }}</h2> -->
+<!-- </ng-template> -->
+
+<div class="row dir-box">
+  <table class="table" *ngIf="!tilesView">
+    <thead>
+      <tr>
+        <th role="directory-column-head" scope="col">Name</th>
+        <th role="directory-column-head" scope="col">Type</th>
+        <th role="directory-column-head" scope="col">Last</th>
+        <th role="directory-column-head" scope="col">Size</th>
+        <th role="directory-column-head" scope="col">More...</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr
+        role="directory-row"
+        *ngFor="let dir of dirInfo; let i = index"
+        (dblclick)="fileFolderClickHandler(dir, dir.newly)"
+        [attr.componentid]="myCompId"
+      >
+        <th
+          #directoryRightMenuColumn
+          scope="row"
+          role="directory-right-menu-column"
+          [attr.classname]="i"
+          [attr.componentid]="myCompId"
+        >
+          <i *ngIf="dir.isDir" class="bi bi-folder-fill"></i>
+          <i *ngIf="dir.isFile" class="bi bi-file-earmark"></i>
+          <input
+            class="mx-1"
+            type="text"
+            *ngIf="dir.newly"
+            value="{{ dir.newFileNameAfterCheckInServer }}"
+            autofocus
+            #newlyInput
+            (blur)="newlyInputBlur(newlyInput, dir)"
+          />
+          {{ dir.newly == true ? '' : dir.name }}
+        </th>
+        <td
+          #directoryRightMenuColumn
+          [attr.classname]="i"
+          role="directory-right-menu-column"
+        >
+          {{ dir.isDir == false ? 'file' : 'folder' }}
+        </td>
+        <td
+          #directoryRightMenuColumn
+          [attr.classname]="i"
+          role="directory-right-menu-column"
+        >
+          {{ dir?.stats?.birthtime | date : 'yyyy-MM-dd HH:mm' }}
+        </td>
+        <td
+          #directoryRightMenuColumn
+          [attr.classname]="i"
+          role="directory-right-menu-column"
+          [attr.componentid]="myCompId"
+        >
+          {{ dir?.stats?.size }}
+        </td>
+        <td
+          [attr.classname]="i"
+          role="show-common-desktop-right-menu"
+          type="directory"
+          [attr.componentid]="myCompId"
+        ></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="col list-view d-flex flex-wrap" *ngIf="tilesView">
+    <ng-container
+      *ngFor="let dir of dirInfo; let i = index"
+      (dblclick)="fileFolderClickHandler(dir, dir.newly)"
+    >
+      <div class="d-flex flex-column text-center">
+        <i
+          *ngIf="dir?.isDir"
+          [attr.classname]="i"
+          class="bi bi-folder-fill file-folder-icon"
+        ></i>
+        <i
+          *ngIf="dir?.isFile"
+          [attr.classname]="i"
+          class="bi bi-file-earmark-text file-folder-icon"
+        ></i>
+        <span style="margin-top: -1em">{{ dir?.name }}</span>
+      </div>
+    </ng-container>
+  </div>
+</div>

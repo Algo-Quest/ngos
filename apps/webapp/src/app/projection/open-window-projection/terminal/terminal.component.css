@@ -1,0 +1,83 @@
+body {
+  background-color: black;
+  color: #00ff00;
+  margin: 0;
+  padding: 10px;
+}
+
+.terminal {
+  border: 2px solid #00ff00;
+  border-radius: 5px;
+  overflow: scroll;
+  height: 652px;
+  padding: 10px;
+  width: 100%;
+  background-color: black;
+  font-size: larger;
+  font-weight: lighter;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.terminal::-webkit-scrollbar {
+  width: 9px;
+}
+
+.terminal::-webkit-scrollbar-thumb {
+  border-radius: 9px;
+  background-color: rgb(71, 71, 71);
+}
+
+.output {
+  color: #00ff00;
+  user-select: text !important;
+}
+
+.input-line {
+  display: flex;
+  text-indent: 5px;
+  text-decoration: none;
+  font-weight: lighter;
+}
+
+.prompt {
+  color: #00ff00;
+  margin-right: 5px;
+}
+
+.input {
+  flex: 1;
+  border: none;
+  background-color: black;
+  color: #00ff00;
+  outline: none;
+  font-weight: lighter;
+}
+
+/*  */
+
+.directory-listing {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.directory {
+  width: calc(33.33% - 20px); /* Three columns with some margin between them */
+  margin-bottom: 20px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  padding: 10px;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.directory-name {
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.directory-details {
+  margin-top: 10px;
+  font-size: 0.8em;
+  color: #666;
+}

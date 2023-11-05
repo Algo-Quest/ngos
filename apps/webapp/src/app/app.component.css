@@ -1,0 +1,24 @@
+.docker-panel-position {
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+}
+
+.bi-nav {
+  font-size: 1.25em !important;
+}
+
+.left > * {
+  margin-right: 1em !important;
+  font-weight: bolder;
+  font-size: 1.2em;
+}
+
+.right > * {
+  margin-right: 1em !important;
+  font-size: 1.2em;
+}
+
+.nav-os {
+  user-select: none !important;
+}

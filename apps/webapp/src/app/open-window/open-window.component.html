@@ -1,0 +1,21 @@
+<div #windowBox class="window-box animate__animated animate__jackInTheBox">
+  <div class="top-bar" applymove>
+    <span class="position-absolute text-center mx-2">{{
+      appName || 'anonymous app'
+    }}</span>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-11 top-bar-left-side"></div>
+        <div class="col top-bar-right-side d-flex justify-content-end">
+          <span role="hide"></span>
+          <span role="maximize" class="mx-1"></span>
+          <span role="close" (click)="closeWindow(myComponentId)"></span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Data comes from parent component (component-communication)-->
+  <!-- *ngComponentOutlet="openWindowProjection" can also be used here -->
+  <ng-container #openWinProjectionRef></ng-container>
+  <!-- <ng-container *ngTemplateOutlet="openWindowProjection"></ng-container> -->
+</div>

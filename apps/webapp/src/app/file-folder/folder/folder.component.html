@@ -1,0 +1,21 @@
+<!-- do not add/use animation which has width,height,top,left changes because it will affect in folder create position will chnage as animation takes time to show and in the mean time some continuosly creates folder it will calculate the animated chnaged dimension and affect position -->
+<div
+  role="folder"
+  class="file-folder animate__animated animate__flash d-flex flex-column"
+  #folder
+>
+  <i
+    class="bi bi-folder-fill text-primary"
+    [attr.id]="folderId"
+    [attr.mouseselection]="true"
+    applymove
+  ></i>
+
+  <input
+    [style.height]="'22px'"
+    type="text"
+    value="New Folder"
+    size="9"
+    style="margin-top: -1.25em"
+  />
+</div>

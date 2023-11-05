@@ -1,0 +1,8 @@
+.rightMenu {
+  position: absolute;
+  width: 300px;
+  min-height: 320px;
+  max-height: 387px;
+  background-color: hsl(0, 0%, 17%, 0.2) !important;
+  backdrop-filter: blur(10px) !important;
+}

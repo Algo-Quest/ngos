@@ -1,0 +1,29 @@
+/* You can add global styles to this file, and also import other style files */
+@import '~bootstrap/dist/css/bootstrap.min.css';
+@import '~bootstrap-icons/font/bootstrap-icons.css';
+@import '~animate.css/animate.css';
+
+body {
+  -webkit-font-smoothing: antialiased;
+  overflow: hidden !important;
+  background: url('https://wallpaperset.com/w/full/f/2/5/387540.jpg');
+  background-repeat: no-repeat;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.cursor-pointer {
+  cursor: pointer !important;
+}
+
+.change-bg-on-mouse-over:hover {
+  background-color: lightgrey !important;
+}
+/* 
+*::-webkit-scrollbar {
+  width: 9px;
+}
+
+*::-webkit-scrollbar-thumb {
+  border-radius: 9px;
+  background-color: rgb(71, 71, 71);
+} */

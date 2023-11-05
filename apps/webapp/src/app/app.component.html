@@ -1,0 +1,40 @@
+<nav
+  class="nav-os text-dark bg-light"
+  style="z-index: 99999999999999999999999999999999999999999999999999999"
+>
+  <div class="d-flex justify-content-between mx-3">
+    <div class="left">
+      <i class="bi bi-apple bi-nav"></i>
+      <span>Finder</span>
+      <span>File</span>
+      <span>Edit</span>
+      <span>View</span>
+      <span>Go</span>
+      <span>Window</span>
+      <span>Help</span>
+    </div>
+    <div class="right">
+      <i class="bi bi-wifi bi-nav"></i>
+      <i class="bi bi-volume-up-fill"></i>
+      <span class="mx-2">{{ getFormattedDate }}</span>
+      <i class="bi bi-search"></i>
+    </div>
+  </div>
+</nav>
+
+<main #mainDesktop>
+  <div role="docker-panel" class="docker-panel-position">
+    <docker-panel
+      (dockerAppOpenerEvent)="dockerAppOpenerEvent($event)"
+    ></docker-panel>
+  </div>
+
+  <!-- where explorer or app windows gets opened -->
+  <div #openWindow class="container-fluid"></div>
+  <!-- / -->
+</main>
+
+<!-- Here where the apps folder/ file will appear -->
+<main #mainBaseScreen class="mb">
+  <!--  -->
+</main>

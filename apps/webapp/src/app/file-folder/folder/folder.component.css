@@ -1,0 +1,9 @@
+.file-folder {
+  position: absolute;
+  user-select: none;
+  padding: 1em;
+}
+
+.file-folder > i {
+  font-size: 4.25rem;
+}

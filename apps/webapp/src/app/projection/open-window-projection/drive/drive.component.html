@@ -1,0 +1,150 @@
+<!-- <ng-template #openWindowProjection> -->
+<!-- <h2 class="text-dark">HEY i am from child comp! {{ myData }}</h2> -->
+<!-- </ng-template> -->
+
+<div class="container">
+  <div class="row">
+    <!-- Right Menu Fixed content either we move to directory-->
+    <!-- Right Menu Context -->
+    <div class="col-3 p-0 m-0">
+      <div class="right-menu bg-light w-100">
+        <div class="row">
+          <!-- Left arrow -->
+          <div class="col-2">
+            <button
+              class="btn"
+              [disabled]="!directoryPathVisited[1]"
+              (click)="backDir()"
+            >
+              <span class="bi bi-arrow-left-circle-fill"></span>
+            </button>
+          </div>
+          <!-- Right arrow -->
+          <div class="col-2">
+            <button
+              class="btn"
+              [disabled]="!visitedPathHistoryTrack[0]"
+              (click)="nextDir()"
+            >
+              <span class="bi bi-arrow-right-circle-fill"></span>
+            </button>
+          </div>
+        </div>
+
+        <div class="row mt-2">
+          <div class="container">
+            <ul class="px-3" id="myUL">
+              <li>
+                <span #caret class="caret">This PC</span>
+                <ul class="nested">
+                  <li><i class="bi bi-folder-fill"></i> Drive PC</li>
+                  <li><i class="bi bi-folder-fill"></i> Drive USER</li>
+                  <li>
+                    <span #caret class="caret">Projects</span>
+                    <ul class="nested">
+                      <li><i class="bi bi-folder-fill"></i> Folder 1</li>
+                      <li><i class="bi bi-folder-fill"></i> Folder 2</li>
+                      <li>
+                        <span #caret class="caret">Games</span>
+                        <ul class="nested">
+                          <li><i class="bi bi-folder-fill"></i> Kernels</li>
+                          <li><i class="bi bi-folder-fill"></i> Back end</li>
+                          <li><i class="bi bi-folder-fill"></i> System</li>
+                          <li><i class="bi bi-folder-fill"></i> DLL</li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--  -->
+    <!--  -->
+    <!-- Left Menu Context -->
+    <div class="col-9 left-menu">
+      <!--  -->
+      <div class="row" role="directory-breadcrumb">
+        <div class="col-8">
+          <nav aria-label="breadcrumb" class="d-flex mt-1">
+            <ol class="breadcrumb">
+              <li
+                class="breadcrumb-item"
+                *ngFor="let directory of directoryPathVisited; let i = index"
+              >
+                <span *ngIf="i == 0" style="margin-left: -0.35em"
+                  ><b>{{ directory.name }}</b></span
+                >
+                <span *ngIf="i != 0"> {{ directory.name }}</span>
+              </li>
+              <!-- <li class="breadcrumb-item"><a href="#">Home</a></li>
+              <li class="breadcrumb-item"><a href="#">Library</a></li>
+              <li class="breadcrumb-item active" aria-current="page">Data</li> -->
+            </ol>
+          </nav>
+        </div>
+
+        <div class="col-4">
+          <div class="d-flex my-1">
+            <input
+              list="fileFolder"
+              value=""
+              placeholder="Search recursively..."
+              class="form-control"
+              (keyup)="valuechange($event)"
+            />
+            <datalist id="fileFolder">
+              <option
+                *ngFor="let value of searchedThroughDirResult"
+                [value]="value"
+              >
+                {{ value }}
+              </option>
+            </datalist>
+          </div>
+        </div>
+      </div>
+      <!-- / -->
+      <div class="row" role="drive-dir-view">
+        <div class="row" *ngIf="!directoryMode">
+          <div
+            *ngFor="let drive of myDrives"
+            class="col cursor-pointer change-bg-on-mouse-over p-2"
+            role="drive"
+            [attr.id]="drive.drive"
+            (dblclick)="
+              openDrive({ type: 'drive', id: drive.drive, name: drive.drive })
+            "
+          >
+            <h6 role="drive">Drive : {{ drive.drive }}</h6>
+            <div class="progress">
+              <div
+                class="progress-bar progress-bar"
+                [style.width]="(drive.sizeInKB / (5 * 1024 * 1024)) * 100 + '%'"
+                role="progressbar"
+                [attr.aria-valuenow]="drive.sizeInKB / 100"
+                aria-valuemin="0"
+                aria-valuemax="100"
+              ></div>
+            </div>
+
+            <div role="drive-space-ingo">
+              <small
+                >{{
+                  (5 * 1024 * 1024 - drive.sizeInKB) / (1024 * 1024)
+                    | number : '1.2-2'
+                }}
+                GB free of {{ (5 * 1024 * 1024) / (1024 * 1024) }} GB</small
+              >
+            </div>
+          </div>
+          <!--  -->
+        </div>
+        <div class="row" #driveDirViewRef></div>
+      </div>
+    </div>
+  </div>
+</div>

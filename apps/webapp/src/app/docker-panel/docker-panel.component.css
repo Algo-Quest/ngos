@@ -1,0 +1,32 @@
+.dock {
+  position: fixed;
+  bottom: 0;
+  width: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80px;
+  background-color: hsl(0, 0%, 17%, 0.2);
+  backdrop-filter: blur(10px);
+  border-radius: 25px;
+  padding-left: 10px;
+  padding-right: 10px;
+  z-index: 999999999999;
+}
+
+.dock-item {
+  width: 60px;
+  height: 60px;
+  margin: 0 5px;
+  background-color: #ffffff;
+  border-radius: 25%;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+  display: grid;
+  place-items: center;
+}
+
+.dock-item > i {
+  font-size: 2vw;
+  transition: 0.25s;
+}

@@ -1,0 +1,29 @@
+<div
+  #receiverScreen
+  class="receiver-screen-box animate__animated animate__jackInTheBox"
+>
+  <div class="receiver-screen text-white" applymove>
+    <div class="container-fluid">
+      <div class="row d-flex">
+        <span class="my-fs"
+          >Access Request from : {{ 'cl.aniketraj@gmail.com' }}</span
+        >
+      </div>
+
+      <br />
+
+      <div class="row d-flex justify-content-center">
+        <div class="col-3">
+          <button class="btn btn-success" (click)="receiveReq()">
+            Receive request
+          </button>
+        </div>
+        <div class="col-3">
+          <button class="btn btn-danger" (click)="denyReq()">
+            Deny request
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

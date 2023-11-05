@@ -1,0 +1,17 @@
+.receiver-screen-box {
+  position: absolute;
+  top: 25%;
+  left: 15%;
+  z-index: 9999999999999999999;
+}
+
+.receiver-screen {
+  width: 50vw;
+  height: 50vh;
+  border: 1px solid tomato !important;
+  background-color: black;
+}
+
+.my-fs {
+  font-size: x-large;
+}

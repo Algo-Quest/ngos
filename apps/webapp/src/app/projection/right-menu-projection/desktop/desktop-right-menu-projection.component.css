@@ -1,0 +1,23 @@
+td:hover {
+  /* cursor: pointer; */
+  background-color: dodgerblue;
+  user-select: none;
+  color: black;
+}
+
+td {
+  background-color: hsl(0, 0%, 17%, 0.2);
+  backdrop-filter: blur(10px);
+  font-weight: bold;
+  border: none;
+  color: white;
+  font-size: large;
+}
+
+.active {
+  background-color: dodgerblue;
+}
+
+.moreOptBox {
+  position: absolute !important;
+}

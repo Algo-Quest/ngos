@@ -1,0 +1,10 @@
+td:hover {
+  /* cursor: pointer; */
+  background-color: dodgerblue;
+  user-select: none;
+  color: black;
+}
+
+.table {
+  position: absolute !important;
+}

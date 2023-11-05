@@ -1,0 +1,17 @@
+<div #rightMenu class="rightMenu">
+  <!-- comes from instance in @Input() myDestopRightMenuTemplate in context we provide data/templare/componentref etc-->
+  <ng-container
+    *ngComponentOutlet="
+      myDestopRightMenuTemplate;
+      inputs: {
+        myData: 'jerry',
+        myDesktopRef: myDesktopRef,
+        myMouseEvent: myMouseEvent
+      };
+      injector: myInjector;
+      content: myContent
+    "
+  ></ng-container>
+
+  <!-- content: myContent is for content-projection it will send to parent component -->
+</div>

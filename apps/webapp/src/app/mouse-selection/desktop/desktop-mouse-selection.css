@@ -1,0 +1,10 @@
+.boxToBe {
+  position: absolute;
+  background-color: rgb(64, 0, 255);
+  opacity: 0.4;
+  z-index: 9999999999999999999999999999999999999999999999;
+}
+
+* {
+  user-select: none;
+}
